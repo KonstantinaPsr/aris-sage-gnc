@@ -1,6 +1,8 @@
 % the x axis is parallel to long/easy axis of the satellite, the y and z
 % axis are parallel to each corresponing short/hard axis of the satellite
 
+% Await more detailed information from structures from weight distribution
+
 unit = 3; % number of stacked cubesat units
 
 % dimensions of satellite
@@ -16,6 +18,8 @@ volume = length*width*height; % [m^3]
 % I_z = 1/12*mass*(length^2+height^2); % [kg*m^2], inertia around z-axis
 % I = [I_x 0 0; 0 I_y 0; 0 0 I_z]; % [kg*m^2], inertia tensor
 omega = [0; 0; 0]; % [1/s], rotational speed of satellite
+
+%% Compute rotational speed and gravity acting on payload
 
 % the geometrical reference frame is placed at the exact center of the cubesat
 mass_payload = 1.2; % [kg]
@@ -43,3 +47,12 @@ v_payload = omega_z*d_CS_CPL; % [m/s]
 F_payload = mass_payload*v_payload^2/d_CS_CPL; % [N]
 g_payload = F_payload/mass_payload; % [m/s^2]
 disp(g_payload);
+
+%% Compute needed Power
+
+%% TODO
+% Gravity to torque plot
+% Power to torque plot
+% Power to gravity plot
+% Angular Momentum to gravity plot
+% Actuator Comparison
