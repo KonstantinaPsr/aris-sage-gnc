@@ -48,7 +48,10 @@ F_payload = mass_payload*v_payload^2/d_CS_CPL; % [N]
 g_payload = F_payload/mass_payload; % [m/s^2]
 disp(g_payload);
 
+
+
 %% Compute needed Power
+% Calculations based on the 
 
 %% TODO
 % Gravity to torque plot
