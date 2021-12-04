@@ -74,16 +74,16 @@ ax1 = axes(t);
 plot(ax1, omega_z_range, g_payload);
 plot_title = title({'Artificial gravity for a fixed satellite weight of 4kg';'';''});
 plot_title.FontSize = 14;
-xlabel('Angular velocity around rotation axis [1/s]');
-ylabel('Acceleration at CoM of payload [m/s^2]');
+xlabel('Angular velocity around rotation axis [1/s]','FontSize',14);
+ylabel('Acceleration at CoM of payload [m/s^2]','FontSize',14);
 ax2 = axes(t);
 plot(ax2, L_wheel_range, g_payload);
-xlabel('Angular momentum provided by reaction wheel [Nms]')
+xlabel('Angular momentum provided by reaction wheel [Nms]','FontSize',14);
 ax2.XAxisLocation = 'top';
 x0=10;
 y0=10;
-width=1100;
-height=800;
+width=825;
+height=600;
 set(gcf,'position',[x0,y0,width,height])
 
 % t = tiledlayout(1,1);
@@ -110,7 +110,7 @@ r_CoM_payload = 0.1; % [m]
 r_CoM_sat_platform = -0.1; % [m] 
 % center of mass of whole payload in the geometric reference frame
 r_CoM_satellite = (r_CoM_payload.*mass_payload + r_CoM_sat_platform.*mass_sat_platform) ./ (mass_payload + mass_sat_platform); % [m]
-disp(r_CoM_satellite);
+%disp(r_CoM_satellite);
 % distance from satellite CoM to payload CoM
 d_CS_CPL = r_CoM_payload - r_CoM_satellite; % [m]
 % distance from satellite CoM to satellite platform CoM
@@ -136,14 +136,14 @@ ax1.XColor = 'k';
 ax1.YColor = 'k';
 plot_title = title({'Artificial gravity for a satellite platform with a weight of 2kg';'';''});
 plot_title.FontSize = 14;
-xlabel('Payload mass [kg]');
-y = ylabel('Acceleration at CoM of payload [m/s^2]');
+xlabel('Payload mass [kg]','FontSize',14);
+y = ylabel('Acceleration at CoM of payload [m/s^2]','FontSize',14);
 ax2 = axes(t);
-plot(ax2, weight_ratio, omega_z_range, '-b');
-ax2.XColor = 'b';
-ax2.YColor = 'b';
-xlabel('m_{payload}/m_{platform}');
-ylabel('Angular velocity around rotation axis [1/s]')
+plot(ax2, weight_ratio, omega_z_range, 'color', [0 0.4470 0.7410]);
+ax2.XColor = [0 0.4470 0.7410];
+ax2.YColor = [0 0.4470 0.7410];
+xlabel('m_{payload}/m_{platform}','FontSize',14);
+ylabel('Angular velocity around rotation axis [1/s]','FontSize',14)
 ax2.XAxisLocation = 'top';
 ax2.YAxisLocation = 'right';
 ax2.Color = 'none';
@@ -151,8 +151,8 @@ ax1.Box = 'off';
 ax2.Box = 'off';
 x0=10;
 y0=10;
-width=1100;
-height=800;
+width=825;
+height=600;
 set(gcf,'position',[x0,y0,width,height])
 
 % figure(3);
