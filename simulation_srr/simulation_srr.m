@@ -143,6 +143,7 @@ plot(ax2, weight_ratio, omega_z_range, 'color', [0 0.4470 0.7410]);
 ax2.XColor = [0 0.4470 0.7410];
 ax2.YColor = [0 0.4470 0.7410];
 xlabel('m_{payload}/m_{platform}','FontSize',14);
+xlim([0.25, 1]);
 ylabel('Angular velocity around rotation axis [1/s]','FontSize',14)
 ax2.XAxisLocation = 'top';
 ax2.YAxisLocation = 'right';
